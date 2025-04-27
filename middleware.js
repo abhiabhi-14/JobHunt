@@ -1,4 +1,5 @@
 import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
+import { NextResponse } from "next/server";
 
 const isProtectedRoute = createRouteMatcher([
   "/resume(.*)",
@@ -6,10 +7,9 @@ const isProtectedRoute = createRouteMatcher([
   "/cv(.*)",
 ]);
 
-// Safely export middleware
 const middleware = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
   ? clerkMiddleware()
-  : (req: any) => Response.next(); // just skip Clerk if env is missing
+  : (req) => NextResponse.next();
 
 export default middleware;
 
