@@ -2,11 +2,13 @@
 import { useEffect, useState } from "react";
 import ArticleCard from "@/components/ArticleCard";
 import Pagination from "@/components/Pagination";
+import Loading from "@/components/Loading";
 
 const Blogs = () => {
   const [articles, setArticles] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+  const [loading, setLoading] = useState(true);
   const perPage = 7;
 
   const API_URL =
@@ -20,8 +22,8 @@ const Blogs = () => {
         );
         const data = await res.json();
         setArticles(data);
-        // MockAPI doesn’t return total count directly, you might need to set totalPages manually for now
-        setTotalPages(5); // or calculate based on known data
+        setTotalPages(5);
+        setLoading(false);
       } catch (error) {
         console.error("Failed to fetch articles:", error);
       }
@@ -30,6 +32,9 @@ const Blogs = () => {
     fetchArticles();
   }, [currentPage]);
 
+  if (loading) {
+    return <Loading />;
+  }
   return (
     <div className="p-6 max-w-6xl mx-auto">
       <h1 className="text-3xl font-bold mb-6 text-center">

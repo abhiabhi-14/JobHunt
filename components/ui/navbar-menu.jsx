@@ -67,10 +67,10 @@ export const ProductItem = ({ title, description, href, src }) => {
     <a href={href} className="flex font-sans space-x-2">
       <img
         src={src}
-        width={140}
+        width={160}
         height={70}
         alt={title}
-        className="shrink-0 rounded-md shadow-2xl"
+        className="shrink-0 rounded-md shadow-2xl border-2 border-blue-50"
       />
       <div>
         <h4 className="text-xl font-bold mb-1 text-black dark:text-white">
