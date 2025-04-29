@@ -12,17 +12,17 @@ const Blogs = () => {
   const perPage = 7;
 
   const API_URL =
-    "https://680935f31f1a52874cdc378a.mockapi.io/It_Jobs_Articles";
+    "https://newsapi.org/v2/everything?q=technology&apiKey=6627442129a1439c9b719cbeaf49b425";
 
   useEffect(() => {
     const fetchArticles = async () => {
       try {
         const res = await fetch(
-          `${API_URL}?sortBy=date&order=desc&page=${currentPage}&limit=${perPage}`
+          `${API_URL}&pageSize=${perPage}&page=${currentPage}`
         );
         const data = await res.json();
-        setArticles(data);
-        setTotalPages(5);
+        setArticles(data.articles); // Set the correct articles
+        setTotalPages(Math.ceil(data.totalResults / perPage)); // Calculate total pages based on the total results
         setLoading(false);
       } catch (error) {
         console.error("Failed to fetch articles:", error);
@@ -35,15 +35,21 @@ const Blogs = () => {
   if (loading) {
     return <Loading />;
   }
+
   return (
     <div className="p-6 max-w-6xl mx-auto">
-      <h1 className="text-3xl font-bold mb-6 text-center">
-        Jobs in IT Articles
-      </h1>
+      <div className="mb-8 text-center">
+        <h1 className="text-4xl font-bold mb-2 bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text">
+          Technical Blogs
+        </h1>
+        <p className="text-gray-300 max-w-2xl mx-auto">
+          Struggling with the current job market? Find a job that suits you!
+        </p>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {articles.map((article, index) => (
           <ArticleCard
-            key={article.id}
+            key={article.url} // Use article URL as key (since it's unique)
             article={article}
             featured={index === 0}
           />

@@ -44,7 +44,14 @@ export default function Jobs() {
 
   return (
     <div className="pt-40 max-w-4xl mx-auto">
-      <h2 className="text-2xl font-bold mb-4">Remote Jobs</h2>
+      <div className="mb-8 text-center">
+        <h1 className="text-4xl font-bold mb-2 bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text">
+          Jobs Search
+        </h1>
+        <p className="text-gray-300 max-w-2xl mx-auto">
+          Struggling with the current job market? Find a job that suits you!
+        </p>
+      </div>
       <div className="grid gap-4">
         {currentJobs.map((job) => (
           <div

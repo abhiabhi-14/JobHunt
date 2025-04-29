@@ -3,7 +3,10 @@ import React, { use, useEffect, useRef } from "react";
 import FadeInSplit from "../../Block";
 import ContactMe from "../../ContactMe";
 import Image from "next/image";
-import image1 from "../../../public/lpsc_campus.jpeg";
+import image1 from "../../../public/Hero.png";
+import image2 from "../../../public/Resume_ss.png";
+import image3 from "../../../public/CoverLetter_ss.png";
+import image4 from "../../../public/Jobs_ss.png";
 import "./Hero.css";
 
 function Hero() {
@@ -32,15 +35,15 @@ function Hero() {
     <div className="w-[99vw] overflow-hidden box-border">
       <div className="h-[200px] w-full"></div>
       <h2 className="text-2xl md:text-4xl lg:text-7xl font-bold text-center text-black dark:text-white font-sans tracking-tight">
-        What&apos;s cooler than Beams?{" "}
+        Want to get a Job?{" "}
       </h2>
       <div className="text-2xl md:text-4xl lg:text-7xl font-bold text-center">
         <div className="relative mx-auto inline-block w-max [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))]">
           <div className="absolute left-0 top-[1px] bg-clip-text bg-no-repeat text-transparent bg-gradient-to-r py-4 from-purple-500 via-violet-500 to-pink-500 [text-shadow:0_0_rgba(0,0,0,0.1)]">
-            <span className="">Exploding beams.</span>
+            <span className="">Try JobHunt</span>
           </div>
           <div className="relative bg-clip-text text-transparent bg-no-repeat bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 py-4">
-            <span className="">Exploding beams.</span>
+            <span className="">Try JobHunt</span>
           </div>
         </div>
       </div>
@@ -48,9 +51,8 @@ function Hero() {
       <div className="my-[7vh] text-center text-xl flex justify-center items-center ">
         <p className="w-1/2">
           {" "}
-          Struggling with the current job market? DevQuest provides powerful
-          AI-driven resume analysis, interview prep, and cover letter
-          generation.
+          JobHunt simplifies your job search with AI-driven resume parsing,
+          cover letter generation, and smart job matching.
         </p>
       </div>
 
@@ -59,7 +61,7 @@ function Hero() {
           <div className="w-full absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
           <div className="px-8 py-2 w-full bg-zinc-900 rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
             <a href="../public/Resume/Abhishek_Pant_Resume.pdf" download>
-              Sumbit
+              Portfolio
             </a>
           </div>
         </button>
@@ -67,7 +69,7 @@ function Hero() {
           <div className="w-full absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
           <div className="px-8 py-2 w-full bg-zinc-900 rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
             <a href="../public/Resume/Abhishek_Pant_Resume.pdf" download>
-              Sumbit
+              Artive
             </a>
           </div>
         </button>
@@ -90,34 +92,20 @@ function Hero() {
       <FadeInSplit
         left={
           <Image
-            src={image1}
+            src={image2}
             alt="Left"
             className="w-full h-full rounded-lg text-center"
           />
         }
         right={
           <p className="text-xl text-center">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
-            dolorem quis recusandae explicabo error, cumque facere nam odio,
-            nisi ipsam magni nostrum culpa alias aut aspernatur quos, mollitia
-            molestiae delectus?
-          </p>
-        }
-      />
-      <FadeInSplit
-        left={
-          <Image
-            src={image1}
-            alt="Left"
-            className="w-full h-full rounded-lg text-center"
-          />
-        }
-        right={
-          <p className="text-xl text-center">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
-            dolorem quis recusandae explicabo error, cumque facere nam odio,
-            nisi ipsam magni nostrum culpa alias aut aspernatur quos, mollitia
-            molestiae delectus?
+            Our Resume Parser is a smart tool on our website that helps job
+            seekers and recruiters alike. It scans resumes to extract key
+            details like skills, education, and experience, ensuring they are
+            ATS-friendly. The parser checks formatting and keyword relevance,
+            providing instant feedback to improve visibility in applicant
+            tracking systems. With this tool, users can optimize their resumes
+            for better job matches.
           </p>
         }
         reverse={true}
@@ -125,19 +113,43 @@ function Hero() {
       <FadeInSplit
         left={
           <Image
-            src={image1}
+            src={image3}
             alt="Left"
             className="w-full h-full rounded-lg text-center"
           />
         }
         right={
           <p className="text-xl text-center">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
-            dolorem quis recusandae explicabo error, cumque facere nam odio,
-            nisi ipsam magni nostrum culpa alias aut aspernatur quos, mollitia
-            molestiae delectus?
+            Our Cover Letter Analyzer is a helpful tool on our website designed
+            to guide job seekers in crafting impactful, ATS-friendly cover
+            letters. It reviews structure, tone, and keyword relevance based on
+            the target job description. The tool provides instant feedback on
+            areas to improve, such as clarity, personalization, and formatting.
+            This ensures the cover letter aligns with industry standards and
+            increases the chances of catching a recruiter’s attention.
           </p>
         }
+      />
+      <FadeInSplit
+        left={
+          <Image
+            src={image4}
+            alt="Left"
+            className="w-full h-full rounded-lg text-center"
+          />
+        }
+        right={
+          <p className="text-xl text-center">
+            Our Jobs section offers over 200 job opportunities across various
+            fields, including tech, marketing, design, finance, and more.
+            Whether you're looking for full-time, part-time, contract, or remote
+            roles, we have options to suit every career stage and lifestyle.
+            With listings from top companies worldwide, you'll find the perfect
+            match for your skills and ambitions. Start exploring today and take
+            the next step toward your ideal job with JobHunt!
+          </p>
+        }
+        reverse={true}
       />
       <ContactMe />
     </div>
