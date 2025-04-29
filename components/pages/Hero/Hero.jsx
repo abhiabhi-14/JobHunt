@@ -60,17 +60,13 @@ function Hero() {
         <button className="w-[10vw] p-[3px] relative ">
           <div className="w-full absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
           <div className="px-8 py-2 w-full bg-zinc-900 rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
-            <a href="../public/Resume/Abhishek_Pant_Resume.pdf" download>
-              Portfolio
-            </a>
+            <a href="https://portfolio-2-ashy-xi.vercel.app/">Portfolio</a>
           </div>
         </button>
         <button className="w-[10vw] p-[3px] relative ">
           <div className="w-full absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
           <div className="px-8 py-2 w-full bg-zinc-900 rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
-            <a href="../public/Resume/Abhishek_Pant_Resume.pdf" download>
-              Artive
-            </a>
+            <a href="https://portfolio-2-ashy-xi.vercel.app/">Artive</a>
           </div>
         </button>
       </div>
